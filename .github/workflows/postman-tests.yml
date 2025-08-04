@@ -1,6 +1,9 @@
 name: Run Postman API Tests
 
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
 
 jobs:
   postman-tests:
@@ -18,5 +21,21 @@ jobs:
     - name: Instalar dependências
       run: npm install
 
+    - name: Criar ambiente dinâmico
+      run: |
+        echo '{
+          "id": "websupply-env",
+          "name": "CI",
+          "values": [
+            { "key": "endpoint_base", "value": "${{ secrets.ENDPOINT_BASE }}", "enabled": true },
+            { "key": "vUsuario", "value": "${{ secrets.VUSUARIO }}", "enabled": true },
+            { "key": "vSenha", "value": "${{ secrets.VSENHA }}", "enabled": true }
+          ],
+          "_postman_variable_scope": "environment",
+          "_postman_exported_at": "2025-08-04T14:00:00.000Z",
+          "_postman_exported_using": "Postman/10.20.0"
+        }' > ambiente.postman_environment.json
+
     - name: Executar testes Postman com Newman
-      run: npm run test-api
+      run: |
+        npx newman run websupply-energisa-api.postman_collection.json -e ambiente.postman_environment.json
