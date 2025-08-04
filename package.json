@@ -1,0 +1,12 @@
+{
+  "name": "relatorio-etf2192",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test-api": "newman run \"Websupply - Energisa - API - v1.0.postman_collection.json\""
+  },
+  "devDependencies": {
+    "newman": "^6.0.0"
+  }
+}

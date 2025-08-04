@@ -1,0 +1,22 @@
+name: Run Postman API Tests
+
+on: [push, pull_request]
+
+jobs:
+  postman-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout do código
+      uses: actions/checkout@v2
+
+    - name: Instalar Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Instalar dependências
+      run: npm install
+
+    - name: Executar testes Postman com Newman
+      run: npm run test-api
