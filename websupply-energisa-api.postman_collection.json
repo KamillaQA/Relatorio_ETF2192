@@ -1506,7 +1506,13 @@
 							]
 						},
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer_token}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\r\n  \"dDataIni\": {{dDataIni}},\r\n  \"dDataFim\": {{dDataFim}},\r\n  \"iCdgped\": {{iCdgped}},\r\n  \"cTPProcesso\": {{cTPProcesso}},\r\n  \"cAreaCompra\": {{cAreaCompra}},\r\n  \"cCOMPRADOR\": {{cCOMPRADOR}}\r\n}\r\n",
@@ -1692,7 +1698,13 @@
 							]
 						},
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer_token}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\r\n    \"dDataIni\": {{dDataIni}},\r\n    \"dDataFim\": {{dDataFim}},\r\n    \"iCdgped\": {{iCdgped}},\r\n    \"cTPProcesso\": {{cTPProcesso}},\r\n    \"cAreaCompra\": {{cAreaCompra}},\r\n    \"cCOMPRADOR\": {{cCOMPRADOR}}\r\n}\r\n\r\n",
@@ -1925,7 +1937,13 @@
 							]
 						},
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer_token}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\r\n  \"dDataIni\": {{dDataIni}},\r\n  \"dDataFim\": {{dDataFim}},\r\n  \"dDataIni_Aprov\": {{dDataIni_Aprov}},\r\n  \"dDataFim_Aprov\": {{dDataFim_Aprov}},\r\n  \"cCNPJ\": {{cCNPJ}},\r\n  \"cEMAIL\": {{cEMAIL}},\r\n  \"sStatus\": {{sStatus}},\r\n  \"cRazao_nome\": {{cRazao_nome}}\r\n}\r\n",
@@ -2054,7 +2072,13 @@
 							]
 						},
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer_token}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\r\n  \"de\": {{de}},\r\n  \"ate\": {{ate}},\r\n  \"dDataIni_Aprov\": {{dDataIni_Aprov}},\r\n  \"dDataFim_Aprov\": {{dDataFim_Aprov}},\r\n  \"cTPPedido\": {{cTPPedido}}\r\n}\r\n",
@@ -2210,7 +2234,13 @@
 							]
 						},
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer_token}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\r\n  \"de\": {{de}},\r\n  \"ate\": {{ate}},\r\n  \"dDataIni_Ped\": {{dDataIni_Ped}},\r\n  \"dDataFim_Ped\": {{dDataFim_Ped}}\r\n}\r\n",
@@ -2343,7 +2373,13 @@
 							]
 						},
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer_token}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\r\n  \"de\": {{de}},\r\n  \"ate\": {{ate}},\r\n  \"cTPPedido\": {{cTPPedido}} \r\n}\r\n",
@@ -2370,14 +2406,7 @@
 			],
 			"description": "### 🎯 Objetivo dos testes automatizados:\n\n- **Validar o status HTTP retornado** pela API com base no cenário (ex: `200 OK`, `400 Bad Request`)\n    \n- **Verificar se o retorno de dados** está de acordo com o esperado (com ou sem dados)\n    \n- **Registrar mensagens informativas** para facilitar a leitura dos resultados no Postman Runner\n    \n- **Identificar falhas de autenticação (401)** e destacar quando ocorrem\n    \n\n### 📌 Observações importantes:\n\n- Os testes são mapeados com base em **cenários positivos e negativos**\n    \n- A variável `espera_sem_dados` define se esperamos ou não retorno de dados\n    \n- Cada iteração carrega um cenário com campos como `dDataIni`, `iCdgped`, `cTPProcesso` etc.",
 			"auth": {
-				"type": "oauth2",
-				"oauth2": [
-					{
-						"key": "addTokenTo",
-						"value": "header",
-						"type": "string"
-					}
-				]
+				"type": "noauth"
 			},
 			"event": [
 				{
